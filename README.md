@@ -15,9 +15,6 @@ Once you are into those instances, the commands that are mentioned below should 
 #### Commands to run on all the nodes
 
 ```
-# Get sudo working
-sudo -l
-
 # update packages and their version
 sudo apt-get update && sudo apt-get upgrade -y
 
