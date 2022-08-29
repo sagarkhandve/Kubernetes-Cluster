@@ -48,4 +48,4 @@ In many cases you can just run the installer with different variables again and 
 
 ### Deploy demo application
 
-`kubectl apply -f manifest.yaml
+`kubectl apply -f manifest.yaml`
