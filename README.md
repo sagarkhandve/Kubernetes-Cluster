@@ -51,6 +51,7 @@ Run the below command on the node that you want to make the leader node. Please 
 ```
 export MASTER_IP=<Master-Node IP>
 kubeadm init --apiserver-advertise-address=${MASTER_IP} --pod-network-cidr=10.244.0.0/16
+export KUBECONFIG=/etc/kubernetes/admin.conf
 ```
 
 #### Join Worker-Nodes to the Master-Node
