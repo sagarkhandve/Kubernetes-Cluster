@@ -2,7 +2,7 @@
 
 ### Setting up Kubernetes cluster in 'Ubuntu' or any 'Debian' based distros.
 
-![Blank diagram](https://user-images.githubusercontent.com/90393971/187154410-d055a07e-1115-4d69-8751-8049be7fdd66.png)
+![Blank diagram](https://user-images.githubusercontent.com/90393971/187155369-5860d840-f8a4-4705-a268-0738712d4bec.png)
 
 NOTE: **This document would not work on Lastest Ubuntu 22.04**: We get into https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/#known-issues
 
