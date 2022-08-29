@@ -1,7 +1,8 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license "Go to license section")
 
-## Setting up Kubernetes cluster in 'Ubuntu' or any 'Debian' based distros.
+### Setting up Kubernetes cluster in 'Ubuntu' or any 'Debian' based distros.
 
+![Blank diagram](https://user-images.githubusercontent.com/90393971/187154410-d055a07e-1115-4d69-8751-8049be7fdd66.png)
 
 NOTE: **This document would not work on Lastest Ubuntu 22.04**: We get into https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/#known-issues
 
