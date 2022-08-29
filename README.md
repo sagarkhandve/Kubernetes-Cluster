@@ -4,7 +4,7 @@
 
 ### Setting up Kubernetes cluster in 'Ubuntu' or any 'Debian' based distros.
 
-NOTE: **This document would not work on Lastest Ubuntu 22.04**: We get into https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/#known-issues
+Note: **This document would not work on Lastest Ubuntu 22.04**: We get into https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/#known-issues
 
 First of all, we should have two or more instances created that can connect over the public network. It doesn't matter how those instances are created, for example, they can either be `Digital Ocean`, `AWS EC2`, `Google Cloud`, `Microsoft Azure`, `Oracle Cloud` or `Linode` instances.
 
