@@ -21,7 +21,7 @@ sudo -i
 apt-get update && sudo apt-get upgrade -y
 
 # Install curl and apt-transport-https
-apt-get update && apt-get install -y apt-transport-https curl
+apt-get install -y apt-transport-https curl
 
 # Add key to verify releases
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
