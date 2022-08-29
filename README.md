@@ -46,7 +46,7 @@ After the above commands are successfully run on all the worker nodes. Below ste
 Run the below command on the node that you want to make the leader node. Please make sure you replace the correct IP of the node with `IP-of-Node`
 
 ```
-export MASTER_IP=<IP-of-Node>
+export MASTER_IP=<Master-Node IP>
 kubeadm init --apiserver-advertise-address=${MASTER_IP} --pod-network-cidr=10.244.0.0/16
 ```
 
@@ -55,7 +55,7 @@ kubeadm init --apiserver-advertise-address=${MASTER_IP} --pod-network-cidr=10.24
 Once the command `kubeadm init` is completed on the leader node, below we would get a command like below in the output of `kubeadm init` that can be run on worker nodes to make them join the leader node.
 
 ```
-kubeadm join 206.189.134.39:6443 --token dxxfoj.a2zzwbfrjejzir4h \
+kubeadm join <Master-Node IP>:6443 --token dxxfoj.a2zzwbfrjejzir4h \
     --discovery-token-ca-cert-hash sha256:110e853989c2401b1e54aef6e8ff0393e05f18d531a75ed107cf6c05ca4170eb
 ```
 
