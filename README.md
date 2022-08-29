@@ -14,11 +14,14 @@ Once you are into those instances, the commands that are mentioned below should 
 #### Commands to run on all the nodes
 
 ```
+# Run all the following command as `root user`
+sudo -i
+
 # Update and upgrade packages
-sudo apt-get update && sudo apt-get upgrade -y
+apt-get update && sudo apt-get upgrade -y
 
 # Install curl and apt-transport-https
-sudo apt-get update && sudo apt-get install -y apt-transport-https curl
+apt-get update && sudo apt-get install -y apt-transport-https curl
 
 # Add key to verify releases
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
@@ -29,14 +32,14 @@ deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
 # Install kubelet, kubeadm and kubectl
-sudo apt-get update
-sudo apt-get install -y kubelet kubeadm kubectl
+apt-get update
+apt-get install -y kubelet kubeadm kubectl
 
 # Install docker
-sudo apt-get install docker.io
+apt-get install docker.io
 
 # apt-mark hold is used so that these packages will not be updated/removed automatically
-sudo apt-mark hold kubelet kubeadm kubectl
+apt-mark hold kubelet kubeadm kubectl
 ```
 
 After the above commands are successfully run on all the worker nodes. Below steps can be followed to initialize the Kubernetes cluster.
