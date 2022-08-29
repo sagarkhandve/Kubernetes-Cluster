@@ -1,6 +1,6 @@
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license "Go to license section")
 
-![Blank diagram](https://user-images.githubusercontent.com/90393971/187155369-5860d840-f8a4-4705-a268-0738712d4bec.png)
+![kubernetes_logo_icon_168359](https://user-images.githubusercontent.com/90393971/187158737-efb0268b-e155-439b-a1f8-b39c5e1ca737.png)
 
 ### Setting up Kubernetes cluster in 'Ubuntu' or any 'Debian' based distros.
 
