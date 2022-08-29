@@ -15,25 +15,25 @@ Once you are into those instances, the commands that are mentioned below should 
 #### Commands to run on all the nodes
 
 ```
-# update packages and their version
+# Update and upgrade packages
 sudo apt-get update && sudo apt-get upgrade -y
 
-# install curl and apt-transport-https
+# Install curl and apt-transport-https
 sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 
-# add key to verify releases
+# Add key to verify releases
 curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
 
-# add kubernetes apt repo
+# Add kubernetes apt repo
 cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
 deb https://apt.kubernetes.io/ kubernetes-xenial main
 EOF
 
-# install kubelet, kubeadm and kubectl
+# Install kubelet, kubeadm and kubectl
 sudo apt-get update
 sudo apt-get install -y kubelet kubeadm kubectl
 
-# install docker
+# Install docker
 sudo apt-get install docker.io
 
 # apt-mark hold is used so that these packages will not be updated/removed automatically
