@@ -3,77 +3,17 @@
 ### Kubernetes cluster in 'Ubuntu' or any 'Debian' based distros.
 ![kubernetes_logo_icon_168359](https://user-images.githubusercontent.com/90393971/187159759-d19a8782-d9c6-46af-9a57-7ec015f63a15.png)
 
-Note: **This document would not work on Lastest Ubuntu 22.04**: We get into https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/#known-issues
 
-First of all, we should have two or more instances created that can connect over the public network. It doesn't matter how those instances are created, for example, they can either be `Digital Ocean`, `AWS EC2`, `Google Cloud`, `Microsoft Azure`, `Oracle Cloud` or `Linode` instances.
-
-### SSH into all the instances
-
-Once you are into those instances, the commands that are mentioned below should be run on all the instances
-
-#### Commands to run on all the nodes
-
+### ssh into Master-Node as `root`user and run the given command.
 ```
-# Run all the following command as `root user`
-sudo -i
+curl -sfL https://get.k3s.io | sh -s - --no-deploy traefik --write-kubeconfig-mode 644 --node-name `k3s-master-node`
 
-# Update and upgrade packages
-apt-get update && sudo apt-get upgrade -y
+### Grab token from the master node to be able to add worked nodes to it:
+cat /var/lib/rancher/k3s/server/node-token
 
-# Install curl and apt-transport-https
-apt-get install -y apt-transport-https curl
-
-# Add key to verify releases
-curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-
-# Add kubernetes apt repo
-cat <<EOF | sudo tee /etc/apt/sources.list.d/kubernetes.list
-deb https://apt.kubernetes.io/ kubernetes-xenial main
-EOF
-
-# Install kubelet, kubeadm and kubectl
-apt-get update
-apt-get install -y kubelet kubeadm kubectl
-
-# Install docker
-apt-get install docker.io
-
-# apt-mark hold is used so that these packages will not be updated/removed automatically
-apt-mark hold kubelet kubeadm kubectl
+### ssh into Worker-Node as `root` user and run the given command by updating `Worker-Node` name, IP of the `Master-Node` and the `Token Key' which we grabbed from the Master-Node.
+curl -sfL https://get.k3s.io | K3S_NODE_NAME=Worker-Node-01 K3S_URL=https://<IP>:6443 K3S_TOKEN=<TOKEN> sh - 
 ```
-
-After the above commands are successfully run on all the worker nodes. Below steps can be followed to initialize the Kubernetes cluster.
-
-#### Master-Node
-
-Run the below command on the node that you want to make the leader node. Please make sure you replace the correct IP of the node with `IP-of-Node`
-
-```
-export MASTER_IP=<Master-Node IP>
-kubeadm init --ignore-preflight-errors=all --apiserver-advertise-address=${MASTER_IP} --pod-network-cidr=10.244.0.0/16
-export KUBECONFIG=/etc/kubernetes/admin.conf
-```
-
-#### Join Worker-Nodes to the Master-Node
-
-Once the command `kubeadm init` is completed on the leader node, below we would get a command like below in the output of `kubeadm init` that can be run on worker nodes to make them join the leader node.
-
-```
-kubeadm join <Master-Node IP>:6443 --token dxxfoj.a2zzwbfrjejzir4h \
-    --discovery-token-ca-cert-hash sha256:110e853989c2401b1e54aef6e8ff0393e05f18d531a75ed107cf6c05ca4170eb
-```
-
-### Install CNI plugin
-
-The below command can be run on the leader node to install the CNI plugin
-
-```
-kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-```
-
-### Setting up Kubeconfig file
-
-After successful completion of `kubeadm init` command, like we got the `kubeadm join` command, we would also get details about how we can set up `kubeconfig` file.
 
 
 
