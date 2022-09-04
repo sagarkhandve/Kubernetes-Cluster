@@ -47,5 +47,6 @@ Make sure to restart the service afterwards: `systemctl restart k3s`
 In many cases you can just run the installer with different variables again and it will configure your cluster accordingly without deleting it in the first place.
 
 ### Deploy demo application
-
-`kubectl apply -f manifest.yaml`
+```
+kubectl apply -f manifest.yaml
+```
