@@ -13,7 +13,8 @@ curl -sfL https://get.k3s.io | sh -s - --no-deploy traefik --write-kubeconfig-mo
 
 Grab token code from the master node to be able to add worked nodes to it: 
 
-```cat /var/lib/rancher/k3s/server/node-token
+```
+cat /var/lib/rancher/k3s/server/node-token
 ```
 
 Install k3s on the worker node and add it to our cluster:
