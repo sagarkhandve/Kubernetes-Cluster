@@ -1,4 +1,4 @@
-[![License](https://img.shields.io/badge/License-MIT-blue)](#license "Go to license section") [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsagarkhandve%2Fkubernetes-cluster.git&count_bg=%2308DD09&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true)](https://hits.seeyoufarm.com)
+ [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fsagarkhandve%2Fkubernetes-cluster.git&count_bg=%2308DD09&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=true)](https://hits.seeyoufarm.com)
 
 ### Lightweight, easy, fast Kubernetes distribution with a very small footprint.
 ![kubernetes_logo_icon_168359](https://user-images.githubusercontent.com/90393971/187159759-d19a8782-d9c6-46af-9a57-7ec015f63a15.png)
@@ -55,3 +55,5 @@ In many cases you can just run the installer with different variables again and 
 ```
 kubectl apply -f manifest.yaml
 ```
+### LICENSE
+[![License](https://img.shields.io/badge/License-MIT-blue)](#license "Go to license section")
