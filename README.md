@@ -55,5 +55,5 @@ In many cases you can just run the installer with different variables again and 
 ```
 kubectl apply -f manifest.yaml
 ```
-### LICENSE
+### License
 [![License](https://img.shields.io/badge/License-MIT-blue)](#license "Go to license section")
