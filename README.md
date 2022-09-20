@@ -22,15 +22,12 @@ cat /var/lib/rancher/k3s/server/node-token
 curl -sfL https://get.k3s.io | K3S_NODE_NAME=k3s-worker-01 K3S_URL=https://<IP>:6443 K3S_TOKEN=<TOKEN> sh - 
 ```
 ### Install nginx ingress controller
-
-
 **Website: https://kubernetes.github.io/ingress-nginx/**
 ```
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.2.1/deploy/static/provider/cloud/deploy.yaml
 ```
 
-#### Important note for AWS, Azure, GCP
-
+#### Important note for AWS, Azure, GCP.
 **I can't explain it in detail but if you run a VM on AWS, Azure or GCP the "ingress-nginx" will just pick up the private IP as external IP. You need to manually edit the service to make your public IP address available for nginx, so it can start listening on your public IP address.**
 ```
 kubectl -n ingress-nginx edit svc ingress-nginx-controller
@@ -46,9 +43,7 @@ kubectl -n ingress-nginx edit svc ingress-nginx-controller
 ### Additional information
 
 **You can change the settings of k3s by changing the service settings e.g. with `nano /etc/systemd/system/k3s.service`.**
-
 **Make sure to restart the service afterwards: `systemctl restart k3s`**
-
 **In many cases you can just run the installer with different variables again and it will configure your cluster accordingly without deleting it in the first place.**
 
 ### Deploy demo application
