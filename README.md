@@ -48,5 +48,4 @@ kubectl -n ingress-nginx edit svc ingress-nginx-controller
 ```
 kubectl apply -f manifest.yaml
 ```
-##
 [![License](https://img.shields.io/badge/LICENSE-MIT-blue?style=flat-square&logo)](#license "Go to license section")
